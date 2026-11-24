@@ -166,7 +166,7 @@
   function pad(n){return String(n).padStart(2,'0')}
   function tick(){
     let ms=target-Date.now();
-    if(ms<0){el.textContent='Мы поженились!';return}
+    if(ms<0){el.textContent='Спасибо, что были с нами в этот день';return}
     const d=Math.floor(ms/86400000); ms%=86400000;
     const h=Math.floor(ms/3600000), m=Math.floor(ms%3600000/60000), s=Math.floor(ms%60000/1000);
     const n=d%10, n10=d%100;
