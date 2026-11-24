@@ -52,20 +52,23 @@
   .rsvp-form button{display:block;width:100%;max-width:480px;margin:38px auto 0;background:#7a1f33;color:#f5f1e8;border:0;border-radius:60px;padding:20px;font-size:19px;letter-spacing:2px;font-family:inherit;cursor:pointer}
   .rsvp-form .thanks{display:none;margin-top:22px;color:#7a1f33;font-size:19px;text-align:center}
 
-  /* ===== 8. ФИНАЛ «ШТУКАРЕВЫ» ===== */
-  .finale{position:relative;height:100vh;min-height:640px;overflow:hidden;background:#5c1823}
-  .finale .wall-bg{position:absolute;inset:0;background:#5c1823}
-  .finale .panel{position:absolute;left:-4%;width:108%;background-size:100% 100%;background-repeat:no-repeat;will-change:transform;transition:transform 2.2s cubic-bezier(.16,.8,.24,1)}
-  .finale .panel.top{top:-2px;height:54%;background-image:url(wall_top.jpg);transform:translateY(0) rotate(0deg)}
-  .finale .panel.bottom{bottom:-2px;height:54%;background-image:url(wall_bottom.jpg);transform:translateY(0) rotate(0deg)}
-  .finale.torn .panel.top{transform:translateY(-72%) rotate(-2.2deg)}
-  .finale.torn .panel.bottom{transform:translateY(72%) rotate(1.8deg)}
-  .finale .reveal{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity 1.6s ease .9s;text-align:center;padding:0 20px}
-  .finale.torn .reveal{opacity:1}
-  .finale .name{font-size:52px;letter-spacing:3px;color:#f3d9d2;text-shadow:0 2px 14px rgba(0,0,0,.55)}
-  .finale .date{margin-top:16px;font-size:20px;letter-spacing:5px;color:#d9a8a2}
-  .finale .hint{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-size:14px;letter-spacing:2px;color:#c99098;opacity:0;transition:opacity 1.4s ease 2.4s}
-  .finale.torn .hint{opacity:.9}
+    /* ===== 8. ФИНАЛ «ШТУКАРЕВЫ» ===== */
+  .finale{
+    height:100vh;min-height:640px;background:#5c1823;overflow:hidden;
+    display:flex;flex-direction:column;align-items:center;
+    text-align:center;padding:64px 20px 40px
+  }
+  .finale .name{font-size:52px;letter-spacing:3px;color:#f3d9d2}
+  .finale .date{margin-top:14px;font-size:20px;letter-spacing:5px;color:#d9a8a2}
+  .finale-couple{
+    display:block;margin-top:28px;
+    width:min(78vw,360px);
+    animation:floatUp 3.2s ease-in-out infinite alternate
+  }
+  @keyframes floatUp{
+    from{transform:translateY(0)}
+    to{transform:translateY(-14px)}
+  }
 
   @media (min-width:700px){
     .cal h2{font-size:44px}
@@ -138,13 +141,9 @@
 
 <!-- 8. ШТУКАРЕВЫ -->
 <section class="page finale" id="finale">
-  <div class="wall-bg"></div>
-  <div class="panel top"></div>
-  <div class="panel bottom"></div>
-  <div class="reveal">
-    <div class="name">Штукаревы</div>
-    <div class="date">09.07.2027</div>
-  </div>
+  <div class="name">Штукаревы</div>
+  <div class="date">09.07.2027</div>
+  <img src="couple_white.gif" class="finale-couple" alt="Жених поднимает невесту">
 </section>
 
 <script>
@@ -192,14 +191,6 @@
   });
 })();
 
-// ---- финал: разрыв обоев ----
-(function(){
-  const fin=document.getElementById('finale');
-  const io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){fin.classList.add('torn')}
-      else{fin.classList.remove('torn')}
-    });
   },{threshold:0.55});
   io.observe(fin);
 })();
