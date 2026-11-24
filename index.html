@@ -22,10 +22,10 @@
   .cal .month b{font-weight:400;letter-spacing:6px;font-size:22px}
   .cal .month .yr{letter-spacing:4px;font-size:20px}
   .cal .month .sep{width:1px;height:26px;background:#c9b8a8}
-  .cal table{margin:0 auto;border-collapse:collapse;width:100%;max-width:420px}
-  .cal th{font-size:13px;letter-spacing:2px;color:#a89484;font-weight:400;padding:10px 0}
-  .cal td{font-size:19px;padding:12px 0;color:#5a1424}
-  .cal td.sel span{display:inline-flex;width:52px;height:52px;border-radius:50%;background:#7a1f33;color:#f5f1e8;align-items:center;justify-content:center}
+  .cal table{margin:0 auto;border-collapse:collapse;width:100%;max-width:420px;table-layout:fixed}
+  .cal th{color:#b3b3b3;font-size:14px;text-transform:uppercase;padding:8px 0}
+  .cal td{font-size:18px;padding:10px 0;color:#5a1424;text-align:center}
+  .cal td.sel span{display:inline-flex;width:42px;height:42px;border-radius:50%;background:#7a1f33;color:#f5f1e8;align-items:center;justify-content:center}
   .count{margin:40px auto 0;max-width:480px;border:1px solid #cbb9a6;border-radius:60px;padding:20px 18px;color:#4a3a30;font-size:18px}
   .count b{color:#7a1f33;font-size:22px;font-weight:400;letter-spacing:1px}
 
@@ -140,7 +140,7 @@
 <script>
 // ---- календарь ----
 (function(){
-  const cells=[[0,0,0,1,2,3,4],[5,6,7,8,9,10,11],[12,13,14,15,16,17,18],[19,20,21,22,23,24,25],[26,27,28,29,30,31,null]];
+  const cells=[[null,null,null,1,2,3,4],[5,6,7,8,9,10,11],[12,13,14,15,16,17,18],[19,20,21,22,23,24,25],[26,27,28,29,30,31,null]];
   const tbl=document.getElementById('calgrid');
   let html='<tr><th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th></tr>';
   for(const row of cells){
