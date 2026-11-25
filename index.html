@@ -52,28 +52,35 @@
   .rsvp-form button{display:block;width:100%;max-width:480px;margin:38px auto 0;background:#7a1f33;color:#f5f1e8;border:0;border-radius:60px;padding:20px;font-size:19px;letter-spacing:2px;font-family:inherit;cursor:pointer}
   .rsvp-form .thanks{display:none;margin-top:22px;color:#7a1f33;font-size:19px;text-align:center}
 
-    /* ===== 8. ФИНАЛ «ШТУКАРЕВЫ» ===== */
-  .finale{
-    height:100vh;min-height:640px;background:#5c1823;overflow:hidden;
-    display:flex;flex-direction:column;align-items:center;
-    text-align:center;padding:64px 20px 40px
-  }
-  .finale .name{font-size:52px;letter-spacing:3px;color:#f3d9d2}
-  .finale .date{margin-top:14px;font-size:20px;letter-spacing:5px;color:#d9a8a2}
-  .finale-couple{
-    display:block;margin-top:28px;
-    width:min(78vw,360px);
-    animation:floatUp 3.2s ease-in-out infinite alternate
-  }
-  @keyframes floatUp{
-    from{transform:translateY(0)}
-    to{transform:translateY(-14px)}
-  }
+/* ===== 8. ФИНАЛ «ШТУКАРЕВЫ» (компактный) ===== */
+.finale {
+  background: #5c1823;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  min-width: 100%;
+}
 
-  @media (min-width:700px){
-    .cal h2{font-size:44px}
-    .finale .name{font-size:84px}
-  }
+.finale .name {
+  font-size: 52px;
+  letter-spacing: 3px;
+  color: #f3d9d2;
+  margin: 0;
+}
+
+.finale .date {
+  margin-top: 16px;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: #d9a8a2;
+}
+
+@media (min-width: 700px) {
+  .finale .name { font-size: 84px; }
+}
     /* ===== зелёные слайды ===== */
   .cal,.loc,.rsvp-form{background:#4B5D2E;color:#f5f1e8}
   .cal td{color:#f5f1e8}
