@@ -85,6 +85,48 @@
   .loc h2,.loc h3{color:#f5f1e8}
   .loc p{color:#efe6d2}
   .rsvp-form .thanks{color:#f5f1e8}
+/* Общий стиль для плашек-кнопок как у таймера */
+.badge-btn {
+  display: inline-block;       /* Чтобы кнопка вела себя как компактный блок */
+  margin-top: 38px;            /* Отступ сверху, как у таймера */
+  border: 1px solid #c9a86a;   /* Тонкая золотая рамка (цвет золота из твоей палитры) */
+  border-radius: 60px;         /* Сильное скругление, как у таймера */
+  padding: 20px 18px;           /* Внутренние отступы, чтобы текст не прилипал к краям */
+  color: #f5f1e8;               /* Цвет текста — кремовый, чтобы читался на тёмном фоне */
+  text-align: center;          /* Центрируем текст внутри */
+  font-size: 18px;             /* Размер шрифта */
+  letter-spacing: 1px;          /* Лёгкое раздвижение букв для элегантности */
+  text-decoration: none;       /* Убираем подчёркивание у ссылок */
+  box-sizing: border-box;      /* Чтобы padding не ломал ширину */
+  background: rgba(75, 93, 46, 0.4); /* Полупрозрачный тёмно-зелёный фон. 
+                                        Почему такой цвет? Потому что у тебя есть блок 
+                                        "зелёные слайды", который перекрашивает фон. 
+                                        Этот цвет будет смотреться органично и на креме, 
+                                        и на зелёном. */
+  transition: all 0.2s ease;    /* Плавная анимация при наведении */
+}
+
+/* Эффект при наведении мышки */
+.badge-btn:hover {
+  background: rgba(75, 93, 46, 0.7); /* Делаем фон чуть плотнее */
+  border-color: #f5f1e8;             /* Рамка становится кремовой */
+  transform: translateY(-2px);        /* Лёгкий подъём кнопки вверх */
+}
+
+/* Сброс стилей для кнопки формы (чтобы она не сопротивлялась) */
+.rsvp-form button {
+  border: none;                      /* Убираем стандартную серую рамку браузера */
+  background: transparent;           /* Убираем стандартный серый фон браузера */
+  color: inherit;                    /* Наследуем цвет текста от родителя (.badge-btn) */
+  padding: 0;                         /* Сбрасываем внутренние отступы браузера */
+  margin: 0;                         /* Сбрасываем внешние отступы браузера */
+  font-family: inherit;              /* Наследуем шрифт от родителя */
+  cursor: pointer;                   /* Возвращаем курсор-руку */
+}
+
+.rsvp-form button:hover {
+  background: transparent;           /* При наведении не меняем фон, это сделает .badge-btn */
+}
 </style>
 </head>
 <body>
@@ -112,7 +154,7 @@
   <img src="img_hall.jpg" alt="Банкетный зал «Светлица»">
   <h3>Банкетный зал «Светлица»</h3>
   <p>Московская область,<br>Богородский городской округ,<br>деревня Дядькино, Лесная улица</p>
-  <a class="btn" href="https://yandex.ru/maps/?pt=38.253798,55.946788&z=17&l=map" target="_blank" rel="noopener">Смотреть на карте</a>
+  <a class="badge-btn" href="https://yandex.ru/maps/?pt=38.253798,55.946788&z=17&l=map" target="_blank" rel="noopener">Смотреть на карте</a>
 </section>
 
 <!-- 6. DRESS-CODE -->
@@ -133,7 +175,7 @@
         <label><input type="radio" name="attend" value="С радостью приду" required>С радостью приду</label>
         <label><input type="radio" name="attend" value="К сожалению, не смогу">К сожалению, не смогу</label>
       </div>
-      <button type="submit">ОТПРАВИТЬ ОТВЕТ</button>
+      <button type="submit" class="badge-btn">ОТПРАВИТЬ ОТВЕТ</button>
       <div class="thanks" id="thanks">Спасибо! Ваш ответ отправлен 💛</div>
     </form>
   </div>
