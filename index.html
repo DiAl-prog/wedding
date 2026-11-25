@@ -113,19 +113,20 @@
   transform: translateY(-2px);        /* Лёгкий подъём кнопки вверх */
 }
 
-/* Сброс стилей для кнопки формы (чтобы она не сопротивлялась) */
-.rsvp-form button {
-  border: none;                      /* Убираем стандартную серую рамку браузера */
-  background: transparent;           /* Убираем стандартный серый фон браузера */
-  color: inherit;                    /* Наследуем цвет текста от родителя (.badge-btn) */
-  padding: 0;                         /* Сбрасываем внутренние отступы браузера */
-  margin: 0;                         /* Сбрасываем внешние отступы браузера */
-  font-family: inherit;              /* Наследуем шрифт от родителя */
-  cursor: pointer;                   /* Возвращаем курсор-руку */
+/* Кнопка формы в стиле плашки (повышенный приоритет) */
+.rsvp-form button.badge-btn{
+  border:1px solid #c9a86a;
+  border-radius:60px;
+  padding:20px 18px;
+  background:rgba(75,93,46,0.4);
+  color:#f5f1e8;
+  font-size:18px;
+  letter-spacing:1px;
+  transition:all 0.2s ease
 }
-
-.rsvp-form button:hover {
-  background: transparent;           /* При наведении не меняем фон, это сделает .badge-btn */
+.rsvp-form button.badge-btn:hover{
+  background:rgba(75,93,46,0.7);
+  border-color:#f5f1e8
 }
 </style>
 </head>
